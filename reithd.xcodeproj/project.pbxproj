@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		8DB738AE22ECE9E400994A31 /* ReithTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738AD22ECE9E400994A31 /* ReithTest.swift */; };
-		8DB738BA22ECEAAA00994A31 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7389D22ECE5A500994A31 /* Constants.swift */; };
-		8DB738BB22ECEAAA00994A31 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7389722ECDEA800994A31 /* Store.swift */; };
-		8DB738BC22ECEAAA00994A31 /* Reith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7389522ECDE8D00994A31 /* Reith.swift */; };
-		8DB738BE22ECEAAA00994A31 /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7389922ECDFF600994A31 /* Init.swift */; };
-		8DB738BF22ECEAAA00994A31 /* InitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7389B22ECE2C400994A31 /* InitError.swift */; };
-		8DB738C322ECEB7E00994A31 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C222ECEB7E00994A31 /* main.swift */; };
+		8DB738CB22ECEFED00994A31 /* Reith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C522ECEFED00994A31 /* Reith.swift */; };
+		8DB738CC22ECEFED00994A31 /* Reith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C522ECEFED00994A31 /* Reith.swift */; };
+		8DB738CD22ECEFED00994A31 /* InitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C622ECEFED00994A31 /* InitError.swift */; };
+		8DB738CE22ECEFED00994A31 /* InitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C622ECEFED00994A31 /* InitError.swift */; };
+		8DB738CF22ECEFED00994A31 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C722ECEFED00994A31 /* Store.swift */; };
+		8DB738D022ECEFED00994A31 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C722ECEFED00994A31 /* Store.swift */; };
+		8DB738D122ECEFED00994A31 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C822ECEFED00994A31 /* Constants.swift */; };
+		8DB738D222ECEFED00994A31 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C822ECEFED00994A31 /* Constants.swift */; };
+		8DB738D322ECEFED00994A31 /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C922ECEFED00994A31 /* Init.swift */; };
+		8DB738D422ECEFED00994A31 /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C922ECEFED00994A31 /* Init.swift */; };
+		8DB738D522ECEFED00994A31 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738CA22ECEFED00994A31 /* main.swift */; };
+		8DB738D622ECEFED00994A31 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738CA22ECEFED00994A31 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,15 +35,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8DB7389522ECDE8D00994A31 /* Reith.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reith.swift; sourceTree = "<group>"; };
-		8DB7389722ECDEA800994A31 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		8DB7389922ECDFF600994A31 /* Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Init.swift; sourceTree = "<group>"; };
-		8DB7389B22ECE2C400994A31 /* InitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitError.swift; sourceTree = "<group>"; };
-		8DB7389D22ECE5A500994A31 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8DB738A322ECE92300994A31 /* reiithdtests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reiithdtests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB738AD22ECE9E400994A31 /* ReithTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReithTest.swift; sourceTree = "<group>"; };
 		8DB738B322ECEA8B00994A31 /* reithd */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = reithd; sourceTree = BUILT_PRODUCTS_DIR; };
-		8DB738C222ECEB7E00994A31 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		8DB738C522ECEFED00994A31 /* Reith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reith.swift; path = reithd/Reith.swift; sourceTree = SOURCE_ROOT; };
+		8DB738C622ECEFED00994A31 /* InitError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitError.swift; path = reithd/InitError.swift; sourceTree = SOURCE_ROOT; };
+		8DB738C722ECEFED00994A31 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Store.swift; path = reithd/Store.swift; sourceTree = SOURCE_ROOT; };
+		8DB738C822ECEFED00994A31 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = reithd/Constants.swift; sourceTree = SOURCE_ROOT; };
+		8DB738C922ECEFED00994A31 /* Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Init.swift; path = reithd/Init.swift; sourceTree = SOURCE_ROOT; };
+		8DB738CA22ECEFED00994A31 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = reithd/main.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +85,12 @@
 		8DB738B422ECEA8B00994A31 /* reithd */ = {
 			isa = PBXGroup;
 			children = (
-				8DB7389522ECDE8D00994A31 /* Reith.swift */,
-				8DB7389722ECDEA800994A31 /* Store.swift */,
-				8DB7389922ECDFF600994A31 /* Init.swift */,
-				8DB7389B22ECE2C400994A31 /* InitError.swift */,
-				8DB7389D22ECE5A500994A31 /* Constants.swift */,
-				8DB738C222ECEB7E00994A31 /* main.swift */,
+				8DB738C822ECEFED00994A31 /* Constants.swift */,
+				8DB738C922ECEFED00994A31 /* Init.swift */,
+				8DB738C622ECEFED00994A31 /* InitError.swift */,
+				8DB738CA22ECEFED00994A31 /* main.swift */,
+				8DB738C522ECEFED00994A31 /* Reith.swift */,
+				8DB738C722ECEFED00994A31 /* Store.swift */,
 			);
 			name = reithd;
 			path = reithd/reithd;
@@ -152,6 +158,7 @@
 					};
 					8DB738B222ECEA8B00994A31 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -189,7 +196,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DB738D122ECEFED00994A31 /* Constants.swift in Sources */,
+				8DB738D522ECEFED00994A31 /* main.swift in Sources */,
+				8DB738CD22ECEFED00994A31 /* InitError.swift in Sources */,
+				8DB738CB22ECEFED00994A31 /* Reith.swift in Sources */,
+				8DB738D322ECEFED00994A31 /* Init.swift in Sources */,
 				8DB738AE22ECE9E400994A31 /* ReithTest.swift in Sources */,
+				8DB738CF22ECEFED00994A31 /* Store.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,12 +210,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DB738BB22ECEAAA00994A31 /* Store.swift in Sources */,
-				8DB738BF22ECEAAA00994A31 /* InitError.swift in Sources */,
-				8DB738C322ECEB7E00994A31 /* main.swift in Sources */,
-				8DB738BE22ECEAAA00994A31 /* Init.swift in Sources */,
-				8DB738BC22ECEAAA00994A31 /* Reith.swift in Sources */,
-				8DB738BA22ECEAAA00994A31 /* Constants.swift in Sources */,
+				8DB738D022ECEFED00994A31 /* Store.swift in Sources */,
+				8DB738CE22ECEFED00994A31 /* InitError.swift in Sources */,
+				8DB738D622ECEFED00994A31 /* main.swift in Sources */,
+				8DB738CC22ECEFED00994A31 /* Reith.swift in Sources */,
+				8DB738D422ECEFED00994A31 /* Init.swift in Sources */,
+				8DB738D222ECEFED00994A31 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,8 +375,15 @@
 		8DB738B822ECEA8B00994A31 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -371,7 +391,13 @@
 		8DB738B922ECEA8B00994A31 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
