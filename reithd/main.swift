@@ -4,7 +4,6 @@ import Darwin
 
 func onDnsChange(store: SCDynamicStore, changed: CFArray, info: UnsafeMutableRawPointer?) {
     let reith = Reith(store: store)
-    
     if reith.isConnected() {
         if !reith.isConfigured() {
             reith.configureReithForSystemProxy(enabled: true)

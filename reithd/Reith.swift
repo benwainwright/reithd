@@ -1,5 +1,6 @@
 import CoreFoundation
 import SystemConfiguration
+import AppKit
 
 class Reith {
     let store: Store
@@ -22,6 +23,10 @@ class Reith {
 
     func isConnected() -> Bool {
         return false
+    }
+    
+    public static func getShellProccessIds() -> [Int] {
+        return []
     }
     
     func configureReithForSystemProxy(enabled: Bool) -> Void {
