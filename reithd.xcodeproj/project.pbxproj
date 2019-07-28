@@ -16,10 +16,10 @@
 		8DB738D022ECEFED00994A31 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C722ECEFED00994A31 /* Store.swift */; };
 		8DB738D122ECEFED00994A31 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C822ECEFED00994A31 /* Constants.swift */; };
 		8DB738D222ECEFED00994A31 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C822ECEFED00994A31 /* Constants.swift */; };
-		8DB738D322ECEFED00994A31 /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C922ECEFED00994A31 /* Init.swift */; };
-		8DB738D422ECEFED00994A31 /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C922ECEFED00994A31 /* Init.swift */; };
 		8DB738D522ECEFED00994A31 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738CA22ECEFED00994A31 /* main.swift */; };
 		8DB738D622ECEFED00994A31 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738CA22ECEFED00994A31 /* main.swift */; };
+		8DB738D822ED9EE400994A31 /* Daemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738D722ED9EE400994A31 /* Daemon.swift */; };
+		8DB738D922ED9EE400994A31 /* Daemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738D722ED9EE400994A31 /* Daemon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,8 +42,8 @@
 		8DB738C622ECEFED00994A31 /* InitError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitError.swift; path = reithd/InitError.swift; sourceTree = SOURCE_ROOT; };
 		8DB738C722ECEFED00994A31 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Store.swift; path = reithd/Store.swift; sourceTree = SOURCE_ROOT; };
 		8DB738C822ECEFED00994A31 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = reithd/Constants.swift; sourceTree = SOURCE_ROOT; };
-		8DB738C922ECEFED00994A31 /* Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Init.swift; path = reithd/Init.swift; sourceTree = SOURCE_ROOT; };
 		8DB738CA22ECEFED00994A31 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = reithd/main.swift; sourceTree = SOURCE_ROOT; };
+		8DB738D722ED9EE400994A31 /* Daemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Daemon.swift; path = ../../../../Documents/Daemon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,11 +86,11 @@
 			isa = PBXGroup;
 			children = (
 				8DB738C822ECEFED00994A31 /* Constants.swift */,
-				8DB738C922ECEFED00994A31 /* Init.swift */,
 				8DB738C622ECEFED00994A31 /* InitError.swift */,
 				8DB738CA22ECEFED00994A31 /* main.swift */,
 				8DB738C522ECEFED00994A31 /* Reith.swift */,
 				8DB738C722ECEFED00994A31 /* Store.swift */,
+				8DB738D722ED9EE400994A31 /* Daemon.swift */,
 			);
 			name = reithd;
 			path = reithd/reithd;
@@ -199,8 +199,8 @@
 				8DB738D122ECEFED00994A31 /* Constants.swift in Sources */,
 				8DB738D522ECEFED00994A31 /* main.swift in Sources */,
 				8DB738CD22ECEFED00994A31 /* InitError.swift in Sources */,
+				8DB738D822ED9EE400994A31 /* Daemon.swift in Sources */,
 				8DB738CB22ECEFED00994A31 /* Reith.swift in Sources */,
-				8DB738D322ECEFED00994A31 /* Init.swift in Sources */,
 				8DB738AE22ECE9E400994A31 /* ReithTest.swift in Sources */,
 				8DB738CF22ECEFED00994A31 /* Store.swift in Sources */,
 			);
@@ -211,10 +211,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DB738D022ECEFED00994A31 /* Store.swift in Sources */,
+				8DB738D922ED9EE400994A31 /* Daemon.swift in Sources */,
 				8DB738CE22ECEFED00994A31 /* InitError.swift in Sources */,
 				8DB738D622ECEFED00994A31 /* main.swift in Sources */,
 				8DB738CC22ECEFED00994A31 /* Reith.swift in Sources */,
-				8DB738D422ECEFED00994A31 /* Init.swift in Sources */,
 				8DB738D222ECEFED00994A31 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

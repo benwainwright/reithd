@@ -1,6 +1,7 @@
 import CoreFoundation
 import SystemConfiguration
 import AppKit
+import Foundation
 
 class Reith {
     let store: Store
@@ -16,7 +17,6 @@ class Reith {
                 return false
             }
             return httpsProxy == Constants.Config.reithHttpUrl
-
         }
         return false
     }
@@ -24,16 +24,26 @@ class Reith {
     func isConnected() -> Bool {
         return false
     }
+
+    func configureNetworkLocation(enabled: Bool) -> Void {
+        
+    }
     
-    public static func getShellProccessIds() -> [Int] {
+    func configureShells(enabled: Bool) -> Void {
+        for pid in Reith.getConfiguredShellPids() {
+            kill(pid, enabled ? SIGUSR1 : SIGUSR2)
+        }
+    }
+    
+    private static func getConfiguredShellPids() -> [pid_t] {
+        let fileManager = FileManager.default
+        if let url = URL(string: "\(fileManager.homeDirectoryForCurrentUser)\(Constants.Config.reithdDirName)/") {
+            let enumerator = fileManager.enumerator(atPath: url.path)
+            let pids = enumerator?.allObjects as? [String]
+            if let returnVal = pids?.map({ Int32($0)! }) {
+                return returnVal
+            }
+        }
         return []
-    }
-    
-    func configureReithForSystemProxy(enabled: Bool) -> Void {
-        
-    }
-    
-    func configureReithForShells(enabled: Bool) -> Void {
-        
     }
 }
