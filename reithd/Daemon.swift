@@ -34,19 +34,18 @@ func onDnsChange(store: SCDynamicStore, changed: CFArray, info: UnsafeMutableRaw
 }
 
 func initDynamicStoreMonitoringRunLoop(callback:  @escaping SCDynamicStoreCallBack, keys: [CFString]? = nil, patterns: [CFString]? = nil) throws -> Void {
-    let store = SCDynamicStoreCreate(kCFAllocatorDefault, "reithd" as CFString, callback, nil)
-    if store == nil {
+    
+    guard let store = SCDynamicStoreCreate(kCFAllocatorDefault, "reithd" as CFString, callback, nil) else {
         throw InitError.withMessage("Could not create dynamic store")
     }
 
-    let loop = SCDynamicStoreCreateRunLoopSource(kCFAllocatorDefault, store!, 0)
-    if store == nil {
+    guard let loop = SCDynamicStoreCreateRunLoopSource(kCFAllocatorDefault, store, 0) else {
         throw InitError.withMessage("Could not create dynamic store runloop source")
     }
 
-    CFRunLoopAddSource(CFRunLoopGetCurrent(), loop!, CFRunLoopMode.defaultMode)
+    CFRunLoopAddSource(CFRunLoopGetCurrent(), loop, CFRunLoopMode.defaultMode)
 
-    if !SCDynamicStoreSetNotificationKeys(store!, keys as CFArray?, patterns as CFArray?) {
+    if !SCDynamicStoreSetNotificationKeys(store, keys as CFArray?, patterns as CFArray?) {
         throw InitError.withMessage("Failed to set notification keys")
     }
 }
