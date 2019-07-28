@@ -1,51 +1,50 @@
 import CoreFoundation
-import SystemConfiguration
-import Foundation
 import Darwin
+import Foundation
+import SystemConfiguration
 
 func startDaemon() {
-    do {
-        let dnsKey = SCDynamicStoreKeyCreateNetworkGlobalEntity(kCFAllocatorDefault, kSCDynamicStoreDomainState, kSCEntNetDNS)
-        try initDynamicStoreMonitoringRunLoop(callback: onDnsChange, keys: [dnsKey], patterns: nil)
-        print("Reithd starting...")
-        CFRunLoopRun()
-    } catch(InitError.withMessage(let message)) {
-        print(message)
-        exit(1)
-    } catch {
-        print("Failed to initialise daemon...")
-        exit(1)
-    }
+  do {
+    let dnsKey = SCDynamicStoreKeyCreateNetworkGlobalEntity(kCFAllocatorDefault, kSCDynamicStoreDomainState, kSCEntNetDNS)
+    try initDynamicStoreMonitoringRunLoop(callback: onDnsChange, keys: [dnsKey], patterns: nil)
+    print("Reithd starting...")
+    CFRunLoopRun()
+  } catch let InitError.withMessage(message) {
+    print(message)
+    exit(1)
+  } catch {
+    print("Failed to initialise daemon...")
+    exit(1)
+  }
 }
 
-func onDnsChange(store: SCDynamicStore, changed: CFArray, info: UnsafeMutableRawPointer?) {
-    let reith = Reith(store: store)
-    if reith.isConnected() {
-        if !reith.isConfigured() {
-            reith.configureNetworkLocation(enabled: true)
-        }
-        reith.configureShells(enabled: true)
-    } else {
-        if reith.isConfigured() {
-            reith.configureNetworkLocation(enabled: true)
-        }
-        reith.configureShells(enabled: false)
+func onDnsChange(store: SCDynamicStore, changed _: CFArray, info _: UnsafeMutableRawPointer?) {
+  let reith = Reith(store: store)
+  if reith.isConnected() {
+    if !reith.isConfigured() {
+      reith.configureNetworkLocation(enabled: true)
     }
+    reith.configureShells(enabled: true)
+  } else {
+    if reith.isConfigured() {
+      reith.configureNetworkLocation(enabled: true)
+    }
+    reith.configureShells(enabled: false)
+  }
 }
 
-func initDynamicStoreMonitoringRunLoop(callback:  @escaping SCDynamicStoreCallBack, keys: [CFString]? = nil, patterns: [CFString]? = nil) throws -> Void {
-    
-    guard let store = SCDynamicStoreCreate(kCFAllocatorDefault, "reithd" as CFString, callback, nil) else {
-        throw InitError.withMessage("Could not create dynamic store")
-    }
+func initDynamicStoreMonitoringRunLoop(callback: @escaping SCDynamicStoreCallBack, keys: [CFString]? = nil, patterns: [CFString]? = nil) throws {
+  guard let store = SCDynamicStoreCreate(kCFAllocatorDefault, "reithd" as CFString, callback, nil) else {
+    throw InitError.withMessage("Could not create dynamic store")
+  }
 
-    guard let loop = SCDynamicStoreCreateRunLoopSource(kCFAllocatorDefault, store, 0) else {
-        throw InitError.withMessage("Could not create dynamic store runloop source")
-    }
+  guard let loop = SCDynamicStoreCreateRunLoopSource(kCFAllocatorDefault, store, 0) else {
+    throw InitError.withMessage("Could not create dynamic store runloop source")
+  }
 
-    CFRunLoopAddSource(CFRunLoopGetCurrent(), loop, CFRunLoopMode.defaultMode)
+  CFRunLoopAddSource(CFRunLoopGetCurrent(), loop, CFRunLoopMode.defaultMode)
 
-    if !SCDynamicStoreSetNotificationKeys(store, keys as CFArray?, patterns as CFArray?) {
-        throw InitError.withMessage("Failed to set notification keys")
-    }
+  if !SCDynamicStoreSetNotificationKeys(store, keys as CFArray?, patterns as CFArray?) {
+    throw InitError.withMessage("Failed to set notification keys")
+  }
 }
