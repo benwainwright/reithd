@@ -20,7 +20,7 @@ eval "$(reithd shell)"
 
 #### How this works
 
-This will inject a script into your shell startup which creates and removes pid files in `~/.reithd`. When a change is detected, `reithd` will check this folder, collect the pid numbers and send `SIGUSR1` or `SIGUSR2` signals to each configured shell. The injected shell startup configures your shell to respond to these signals by either removing or adding proxy variables.
+This will inject a script into your shell startup which creates and removes pid files in `~/.reithd` when the shell process starts up and shuts down respectively. When a change is detected, `reithd` will check this folder, collect the pid numbers and send `SIGUSR1` or `SIGUSR2` signals to each configured shell proccess. The injected shell startup script configures your shell to respond to these signals by either removing or adding proxy variables.
 
 ### SSH
 

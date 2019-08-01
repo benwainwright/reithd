@@ -32,7 +32,6 @@ func onDnsChange(store: SCDynamicStore, changed _: CFArray, info _: UnsafeMutabl
     }
     reith.configureShells(enabled: false)
     reith.configureSshConfig(enabled: false)
-
   }
 }
 

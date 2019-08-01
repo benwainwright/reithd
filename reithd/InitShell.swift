@@ -19,19 +19,19 @@ reithd-set-shell-config() {
 }
 
 reithd-clear-shell-config() {
-  if [ ! -z "$http_proxy" ] || \
-     [ ! -z "$HTTP_PROXY" ] || \
-     [ ! -z "$https_proxy" ] || \
-     [ ! -z "$HTTPS_PROXY" ] || \
-     [ ! -z "$FTP_PROXY" ] || \
-     [ ! -z "$ftp_proxy" ] || \
-     [ ! -z "$npm_config_proxy" ] || \
-     [ ! -z "$NO_PROXY" ] || \
-     [ ! -z "$npm_config_https_proxy" ] || \
+  if [ ! -z "$http_proxy" ] || \\
+     [ ! -z "$HTTP_PROXY" ] || \\
+     [ ! -z "$https_proxy" ] || \\
+     [ ! -z "$HTTPS_PROXY" ] || \\
+     [ ! -z "$FTP_PROXY" ] || \\
+     [ ! -z "$ftp_proxy" ] || \\
+     [ ! -z "$npm_config_proxy" ] || \\
+     [ ! -z "$NO_PROXY" ] || \\
+     [ ! -z "$npm_config_https_proxy" ] || \\
      [ ! -z "$ALL_PROXY" ]; then
-    unset http_proxy HTTP_PROXY https_proxy \
-      HTTPS_PROXY FTP_PROXY ftp_proxy \
-      ALL_PROXY npm_config_proxy \
+    unset http_proxy HTTP_PROXY https_proxy \\
+      HTTPS_PROXY FTP_PROXY ftp_proxy \\
+      ALL_PROXY npm_config_proxy \\
       npm_config_https_proxy NO_PROXY
   fi
 }
