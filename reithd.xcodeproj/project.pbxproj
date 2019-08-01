@@ -42,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		8D43D99322F3832000484863 /* SshConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SshConfig.swift; path = reithd/SshConfig.swift; sourceTree = SOURCE_ROOT; };
+		8D43D99622F3993100484863 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8DB738A322ECE92300994A31 /* reiithdtests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reiithdtests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB738AD22ECE9E400994A31 /* ReithTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReithTest.swift; sourceTree = "<group>"; };
 		8DB738B322ECEA8B00994A31 /* reithd */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = reithd; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +77,7 @@
 		8DB7388222ECDE7100994A31 = {
 			isa = PBXGroup;
 			children = (
+				8D43D99622F3993100484863 /* README.md */,
 				8DB738B422ECEA8B00994A31 /* reithd */,
 				8DB7388C22ECDE7100994A31 /* Products */,
 				8DB738C422ECEC9F00994A31 /* tests */,
