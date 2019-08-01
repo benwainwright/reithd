@@ -24,7 +24,7 @@ This will inject a script into your shell startup which creates and removes pid 
 
 ### SSH
 
-Reithd will generate a file called `~/.ssh/config.reith.socks` and automatically comment out or uncomment any lines starting with `ProxyCommand`. You can make use of this file by inserting the line
+Reithd will generate a file called `~/.ssh/config.reith.socks` and automatically comment out or uncomment any lines starting with `ProxyCommand` when the network changes. You can make use of this file by inserting the line
 
 ```bash
 include ~/.ssh/config.reith.socks
