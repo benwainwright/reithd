@@ -2,9 +2,16 @@
 
 This project is a daemon that automatically reconfigures the user's system when connecting and disconnecting to the BBC corporate network ("Reith")
 
-## Usage
+## Install
 
-At present, you can only run the daemon directly using `./reithd start`. I will be shortly be adding a homebrew install step that will put the binary in your path and install it is a launch agent
+Install via homebrew as follows
+
+```
+brew tap benwainwright/tools
+brew install reithd
+```
+
+This will install reithd as a homebrew service. You can start and stop the service with `brew services start reithd` and `brew services stop reithd`. See the below sections for details of how to configure your shell and SSH setup to work with reithd
 
 ## What does it do?
 
@@ -19,7 +26,7 @@ Your network location will be switched to "BBC On Network" or "BBC Off Network" 
 All shells that are configured to use reithd will automatically have their environment reconfigured with the correct proxy environment variables _immediately and transparently_. In order to configure your shell, you will need to insert the following line somewhere in your `~/.zshrc` or `~/.bashrc` file:
 
 ```bash
-eval "$($PATH_TO_REITHD_FILE shell)"
+eval "$(reithd shell)"
 ```
 
 #### How this works
