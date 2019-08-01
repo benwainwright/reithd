@@ -40,6 +40,70 @@ class Reith {
     return false
   }
   
+  private func createFileIfNotExists(atPath: String, withContents: String) {
+    let fileManager = FileManager.default
+    if !fileManager.fileExists(atPath: atPath) {
+      fileManager.createFile(atPath: atPath, contents:Data(withContents.utf8), attributes:nil)
+    }
+  }
+  
+  func unCommentLinesStartingWith(string: String, inContent:String) -> String {
+    let lines = inContent.components(separatedBy: "\n")
+    var newLines = [String]()
+    for line in lines {
+      let range = NSRange(location: 0, length: line.utf16.count)
+      let regex = try! NSRegularExpression(pattern: "^\\s*#\\s*(\(string).*)$")
+      if let matchResult = regex.firstMatch(in: line, options: [], range: range) {
+        if let commandRange = Range(matchResult.range(at: 1), in: line) {
+          newLines.append("  \(String(line[commandRange]))")
+        }
+      } else {
+        newLines.append(line)
+      }
+    }
+    return newLines.joined(separator: "\n")
+  }
+  
+  func commentLinesStartingWith(string: String, inContent:String) -> String {
+    let lines = inContent.components(separatedBy: "\n")
+    var newLines = [String]()
+    for line in lines {
+      let range = NSRange(location: 0, length: line.utf16.count)
+      let regex = try! NSRegularExpression(pattern: "^\\s*(\(string).*)$")
+      if let matchResult = regex.firstMatch(in: line, options: [], range: range) {
+        if let commandRange = Range(matchResult.range(at: 1), in: line) {
+          newLines.append("# \(String(line[commandRange]))")
+        }
+      } else {
+        newLines.append(line)
+      }
+    }
+    return newLines.joined(separator: "\n")
+  }
+
+  func configureSshConfig(enabled: Bool) {
+    let fileManager = FileManager.default
+    let sshFolder = URL(string: "\(fileManager.homeDirectoryForCurrentUser).ssh")!.path
+    
+    if fileManager.fileExists(atPath: sshFolder) {
+      let configFile = "\(sshFolder)/\(Constants.Config.sshConfigFile)"
+      
+      createFileIfNotExists(atPath: configFile, withContents: SshConfig.socksConfig)
+      
+      do {
+        var configFileContents = try String(contentsOfFile: configFile)
+        if(enabled) {
+          configFileContents = unCommentLinesStartingWith(string: Constants.Strings.sshProxyCommand, inContent: configFileContents)
+        } else {
+          configFileContents = commentLinesStartingWith(string: Constants.Strings.sshProxyCommand, inContent: configFileContents)
+        }
+        try configFileContents.write(toFile:configFile, atomically: true, encoding: String.Encoding.utf8)
+      } catch {
+        // Do nothing
+      }
+    }
+  }
+  
   func configureNetworkLocation(enabled: Bool) {
     let onOrOff = enabled
       ? Constants.Strings.bbcOnNetwork

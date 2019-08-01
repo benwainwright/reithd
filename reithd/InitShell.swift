@@ -1,6 +1,6 @@
 import Foundation
 
-class InitShell {
+class Shell {
   static let code = """
 reithd-set-shell-config() {
   export http_proxy_port="\(Constants.Config.reithHttpPort)"

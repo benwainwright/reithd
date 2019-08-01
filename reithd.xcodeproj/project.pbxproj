@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8D43D99222F35E0500484863 /* InitShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7391422F35BBE00994A31 /* InitShell.swift */; };
+		8D43D99422F3832000484863 /* SshConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D99322F3832000484863 /* SshConfig.swift */; };
+		8D43D99522F384C400484863 /* SshConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D99322F3832000484863 /* SshConfig.swift */; };
 		8DB738AE22ECE9E400994A31 /* ReithTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738AD22ECE9E400994A31 /* ReithTest.swift */; };
 		8DB738CB22ECEFED00994A31 /* Reith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C522ECEFED00994A31 /* Reith.swift */; };
 		8DB738CC22ECEFED00994A31 /* Reith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C522ECEFED00994A31 /* Reith.swift */; };
@@ -39,6 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8D43D99322F3832000484863 /* SshConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SshConfig.swift; path = reithd/SshConfig.swift; sourceTree = SOURCE_ROOT; };
 		8DB738A322ECE92300994A31 /* reiithdtests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reiithdtests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB738AD22ECE9E400994A31 /* ReithTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReithTest.swift; sourceTree = "<group>"; };
 		8DB738B322ECEA8B00994A31 /* reithd */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = reithd; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +102,7 @@
 				8DB738DA22EDA1A600994A31 /* Daemon.swift */,
 				8DB738DF22F3394D00994A31 /* Utils.swift */,
 				8DB7391422F35BBE00994A31 /* InitShell.swift */,
+				8D43D99322F3832000484863 /* SshConfig.swift */,
 			);
 			name = reithd;
 			path = reithd/reithd;
@@ -206,6 +210,7 @@
 			files = (
 				8DB738D122ECEFED00994A31 /* Constants.swift in Sources */,
 				8DB7391522F35BBE00994A31 /* InitShell.swift in Sources */,
+				8D43D99422F3832000484863 /* SshConfig.swift in Sources */,
 				8DB738DB22EDA1A600994A31 /* Daemon.swift in Sources */,
 				8DB738D522ECEFED00994A31 /* main.swift in Sources */,
 				8DB738CD22ECEFED00994A31 /* InitError.swift in Sources */,
@@ -220,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D43D99522F384C400484863 /* SshConfig.swift in Sources */,
 				8D43D99222F35E0500484863 /* InitShell.swift in Sources */,
 				8DB738D022ECEFED00994A31 /* Store.swift in Sources */,
 				8DB738DC22EDA1A600994A31 /* Daemon.swift in Sources */,

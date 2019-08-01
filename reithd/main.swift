@@ -24,12 +24,12 @@ func parseCommandLine(args: [String]) -> (positional: [String], named: [String: 
 let args = parseCommandLine(args: CommandLine.arguments)
 
 if args.positional.count < 2 {
-  exit(1)
   print("Error: invalid usage")
+  exit(1)
 }
 
 if args.positional[1] == Constants.Commands.initShell {
-  print(InitShell.code)
+  print(Shell.code)
 } else if args.positional[1] == Constants.Commands.startCommand {
   startDaemon()
 }

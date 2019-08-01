@@ -3,7 +3,6 @@ import Foundation
 class Utils {
   static func runCommand(command: String, args: [String]) -> String {
     let task = Process()
-    print("\(command) \(args.joined(separator: " "))")
 
     task.launchPath = command
     task.arguments = args
