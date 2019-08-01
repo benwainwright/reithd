@@ -11,21 +11,47 @@ class Reith {
   }
 
   func isConfigured() -> Bool {
-    let proxiesKey = SCDynamicStoreKeyCreateNetworkGlobalEntity(kCFAllocatorDefault, kSCDynamicStoreDomainState, kSCEntNetProxies)
-    if let proxiesDict: [String: String] = self.store.getDictionaryValue(key: proxiesKey) {
-      guard let httpsProxy = proxiesDict[Constants.DynamicStoreDictionaryKeys.httpsProxy] else {
-        return false
-      }
+    let proxiesKey = SCDynamicStoreKeyCreateNetworkGlobalEntity(
+      kCFAllocatorDefault,
+      kSCDynamicStoreDomainState,
+      kSCEntNetProxies
+    )
+    if let httpsProxy: String = self.store.getValueFromStoreDict(
+      storeKey: proxiesKey,
+      dictKey: Constants.DynamicStoreDictionaryKeys.httpsProxyKey) {
       return httpsProxy == Constants.Config.reithHttpUrl
     }
     return false
   }
 
   func isConnected() -> Bool {
+    let dnsKey = SCDynamicStoreKeyCreateNetworkGlobalEntity(
+      kCFAllocatorDefault,
+      kSCDynamicStoreDomainState,
+      kSCEntNetDNS
+    )
+    
+    if let dnsDomainName: String = self.store.getValueFromStoreDict(
+      storeKey: dnsKey,
+      dictKey: Constants.DynamicStoreDictionaryKeys.reithDnsDomainNameKey) {
+      return dnsDomainName == Constants.Config.reithDnsDomainName
+    }
+    
     return false
   }
-
-  func configureNetworkLocation(enabled _: Bool) {}
+  
+  func configureNetworkLocation(enabled: Bool) {
+    let onOrOff = enabled
+      ? Constants.Strings.bbcOnNetwork
+      : Constants.Strings.bbcOffNetwork
+    
+    _ = Utils.runCommand(
+      command:Constants.Config.networkSetupLocation,
+      args:[
+        Constants.Strings.switchNetworkLocationFlag,
+        onOrOff
+    ])
+  }
 
   func configureShells(enabled: Bool) {
     for pid in Reith.getConfiguredShellPids() {

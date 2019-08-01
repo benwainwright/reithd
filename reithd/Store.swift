@@ -8,11 +8,15 @@ class Store {
     self.store = store
   }
 
-  func getDictionaryValue<K, V>(key: CFString) -> [K: V]? {
-    guard let plist = SCDynamicStoreCopyValue(self.store, key) else {
+  func getValueFromStoreDict<V>(storeKey: CFString, dictKey: String) -> V? {
+    guard let plist = SCDynamicStoreCopyValue(self.store, storeKey) else {
       return nil
     }
 
-    return plist as? [K: V]
+    guard let dict = plist as? [String: AnyObject] else {
+      return nil
+    }
+    
+    return dict[dictKey] as? V
   }
 }

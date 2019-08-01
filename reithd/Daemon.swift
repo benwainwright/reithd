@@ -18,6 +18,8 @@ func startDaemon() {
   }
 }
 
+
+
 func onDnsChange(store: SCDynamicStore, changed _: CFArray, info _: UnsafeMutableRawPointer?) {
   let reith = Reith(store: store)
   if reith.isConnected() {
@@ -27,7 +29,7 @@ func onDnsChange(store: SCDynamicStore, changed _: CFArray, info _: UnsafeMutabl
     reith.configureShells(enabled: true)
   } else {
     if reith.isConfigured() {
-      reith.configureNetworkLocation(enabled: true)
+      reith.configureNetworkLocation(enabled: false)
     }
     reith.configureShells(enabled: false)
   }
