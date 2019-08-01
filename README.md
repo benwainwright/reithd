@@ -12,7 +12,7 @@ Your network location will be switched to "BBC On Network" or "BBC Off Network" 
 
 ### Shell
 
-All shells that are configured to use reithd will automatically have their environment reconfigured with the correct proxy environment variables. In order to configure your shell, you will need to insert the following line somewhere in your `~/.zshrc` or `~/.bashrc file`:
+All shells that are configured to use reithd will automatically have their environment reconfigured with the correct proxy environment variables _immediately and transparently_. In order to configure your shell, you will need to insert the following line somewhere in your `~/.zshrc` or `~/.bashrc file`:
 
 ```bash
 eval "$(reithd shell)"
