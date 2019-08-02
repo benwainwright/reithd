@@ -24,8 +24,10 @@ class Reith {
     if let httpsProxy: String = self.store.getValueFromStoreDict(
       storeKey: proxiesKey,
       dictKey: Constants.DynamicStoreDictionaryKeys.httpsProxyKey) {
+      os_log("HTTPS proxy is currently set to %@", log: OSLog.default, type: .debug, httpsProxy)
       configured = httpsProxy == Constants.Config.reithHttpUrl
     }
+    
     
     if configured {
       os_log("Network location is currently set to '%@'", log: OSLog.default, type: .debug, Constants.Strings.bbcOnNetwork)
@@ -48,9 +50,11 @@ class Reith {
     if let dnsDomainName: String = self.store.getValueFromStoreDict(
       storeKey: dnsKey,
       dictKey: Constants.DynamicStoreDictionaryKeys.reithDnsDomainNameKey) {
+      os_log("DNS Domain name is currently set to %@", log: OSLog.default, type: .debug, dnsDomainName)
       connected = dnsDomainName == Constants.Config.reithDnsDomainName
     }
     
+
     if connected {
       os_log("Reith network is connected", log: OSLog.default, type: .debug)
     } else {
