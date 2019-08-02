@@ -29,7 +29,7 @@ if args.positional.count < 2 {
 }
 
 if args.positional[1] == Constants.Commands.initShell {
-  print(Shell.code)
+  print(ShellConfigurer.shellScript)
 } else if args.positional[1] == Constants.Commands.startCommand {
   startDaemon()
 }

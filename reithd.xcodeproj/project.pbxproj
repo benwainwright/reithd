@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D43D99222F35E0500484863 /* InitShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7391422F35BBE00994A31 /* InitShell.swift */; };
 		8D43D99422F3832000484863 /* SshConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D99322F3832000484863 /* SshConfig.swift */; };
 		8D43D99522F384C400484863 /* SshConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D99322F3832000484863 /* SshConfig.swift */; };
 		8D43D99822F43DF500484863 /* ReithConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D99722F43DF500484863 /* ReithConfigurer.swift */; };
@@ -35,7 +34,6 @@
 		8DB738DC22EDA1A600994A31 /* Daemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738DA22EDA1A600994A31 /* Daemon.swift */; };
 		8DB738E022F3394D00994A31 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738DF22F3394D00994A31 /* Utils.swift */; };
 		8DB738E122F3394D00994A31 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738DF22F3394D00994A31 /* Utils.swift */; };
-		8DB7391522F35BBE00994A31 /* InitShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7391422F35BBE00994A31 /* InitShell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,7 +66,6 @@
 		8DB738CA22ECEFED00994A31 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = reithd/main.swift; sourceTree = SOURCE_ROOT; };
 		8DB738DA22EDA1A600994A31 /* Daemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Daemon.swift; path = reithd/Daemon.swift; sourceTree = SOURCE_ROOT; };
 		8DB738DF22F3394D00994A31 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = reithd/Utils.swift; sourceTree = SOURCE_ROOT; };
-		8DB7391422F35BBE00994A31 /* InitShell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InitShell.swift; path = reithd/InitShell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +127,6 @@
 				8DB738C722ECEFED00994A31 /* Store.swift */,
 				8DB738DA22EDA1A600994A31 /* Daemon.swift */,
 				8DB738DF22F3394D00994A31 /* Utils.swift */,
-				8DB7391422F35BBE00994A31 /* InitShell.swift */,
 				8D43D99322F3832000484863 /* SshConfig.swift */,
 				8D43D99722F43DF500484863 /* ReithConfigurer.swift */,
 			);
@@ -241,7 +237,6 @@
 				8D43D99D22F43FC700484863 /* NetworkLocationConfigurer.swift in Sources */,
 				8DB738D122ECEFED00994A31 /* Constants.swift in Sources */,
 				8D43D9A522F4579600484863 /* SpotifyConfigurer.swift in Sources */,
-				8DB7391522F35BBE00994A31 /* InitShell.swift in Sources */,
 				8D43D99422F3832000484863 /* SshConfig.swift in Sources */,
 				8DB738DB22EDA1A600994A31 /* Daemon.swift in Sources */,
 				8DB738D522ECEFED00994A31 /* main.swift in Sources */,
@@ -266,7 +261,6 @@
 				8D43D9A122F4486200484863 /* NetworkLocationConfigurer.swift in Sources */,
 				8D43D9A222F4486200484863 /* ShellConfigurer.swift in Sources */,
 				8D43D99522F384C400484863 /* SshConfig.swift in Sources */,
-				8D43D99222F35E0500484863 /* InitShell.swift in Sources */,
 				8DB738D022ECEFED00994A31 /* Store.swift in Sources */,
 				8DB738DC22EDA1A600994A31 /* Daemon.swift in Sources */,
 				8DB738CE22ECEFED00994A31 /* ReithdError.swift in Sources */,
