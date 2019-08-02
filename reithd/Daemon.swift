@@ -2,23 +2,25 @@ import CoreFoundation
 import Darwin
 import Foundation
 import SystemConfiguration
+import Logging
 
 func startDaemon() {
   do {
     let dnsKey = SCDynamicStoreKeyCreateNetworkGlobalEntity(kCFAllocatorDefault, kSCDynamicStoreDomainState, kSCEntNetDNS)
     try initDynamicStoreMonitoringRunLoop(callback: onDnsChange, keys: [dnsKey], patterns: nil)
-    print("Reithd starting...")
+    os_log("Reithd starting", log: OSLog.default, type: .info)
     CFRunLoopRun()
   } catch let ReithdError.withMessage(message) {
-    print(message)
+    os_log("%@", log: OSLog.default, type: .error, message)
     exit(1)
   } catch {
-    print("Failed to initialise daemon...")
+    os_log("Failed to initialise daemon...", log: OSLog.default, type: .error)
     exit(1)
   }
 }
 
 func onDnsChange(store: SCDynamicStore, changed _: CFArray, info _: UnsafeMutableRawPointer?) {
+  os_log("Reithd triggered", log: OSLog.default, type: .debug)
   let reith = Reith(store: store)
   if reith.isConnected() {
     if !reith.isConfigured() {

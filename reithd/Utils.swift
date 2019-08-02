@@ -1,7 +1,11 @@
 import Foundation
+import Logging
 
 class Utils {
   static func runCommand(command: String, args: [String]) throws -> String  {
+    
+    os_log("Running command %@ %@", log: OSLog.default, type: .debug, command, args.joined(separator: " "))
+
     let task = Process()
     
     task.launchPath = command
@@ -18,6 +22,9 @@ class Utils {
       throw ReithdError.withMessage("Failed to initialise string")
     }
     
+    os_log("Command return code was %@", log: OSLog.default, type: .debug, returnVal)
+    os_log("Command output was %@", log: OSLog.default, type: .debug, task.terminationStatus)
+
     return returnVal
   }
 }

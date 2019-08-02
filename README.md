@@ -1,6 +1,6 @@
 #  reithd
 
-This project is a daemon that automatically reconfigures the user's system when connecting and disconnecting to the BBC corporate network ("Reith")
+This project is a daemon for mac users that automatically reconfigures the user's system when connecting and disconnecting to the BBC corporate network ("Reith")
 
 ## Install
 
