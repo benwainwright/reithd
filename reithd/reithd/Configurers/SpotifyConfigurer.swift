@@ -47,8 +47,7 @@ class SpotifyConfigurer: ReithConfigurer {
       do {
         var configFileContents = try String(contentsOfFile: spotifyConfigFile)
         configFileContents = changeValueInConfigFile(key: Constants.Spotify.proxyModeKey, value: enabled ? "4" : "1", inContent: configFileContents)
-        configFileContents = changeValueInConfigFile(key: Constants.Spotify.proxyAddressKey, value: enabled ? "\"\(Constants.Config.reithSocksUrl)@socks5\"" : "", inContent: configFileContents)
-        print(configFileContents)
+        configFileContents = changeValueInConfigFile(key: Constants.Spotify.proxyAddressKey, value: enabled ? "\"\(Constants.Config.reithSocksUrl)@socks5\"" : "\"\"", inContent: configFileContents)
         try configFileContents.write(toFile:spotifyConfigFile, atomically: true, encoding: String.Encoding.utf8)
       } catch {
         os_log("Access to %@ failed", log: OSLog.default, type: .error, spotifyConfigFile)
