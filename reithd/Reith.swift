@@ -5,11 +5,11 @@ import SystemConfiguration
 
 class Reith {
   let store: Store
-
+  
   init(store: SCDynamicStore) {
     self.store = Store(store: store)
   }
-
+  
   func isConfigured() -> Bool {
     let proxiesKey = SCDynamicStoreKeyCreateNetworkGlobalEntity(
       kCFAllocatorDefault,
@@ -23,7 +23,7 @@ class Reith {
     }
     return false
   }
-
+  
   func isConnected() -> Bool {
     let dnsKey = SCDynamicStoreKeyCreateNetworkGlobalEntity(
       kCFAllocatorDefault,
@@ -80,7 +80,7 @@ class Reith {
     }
     return newLines.joined(separator: "\n")
   }
-
+  
   func configureSshConfig(enabled: Bool) {
     let fileManager = FileManager.default
     let sshFolder = URL(string: "\(fileManager.homeDirectoryForCurrentUser).ssh")!.path
@@ -95,7 +95,7 @@ class Reith {
         if(enabled) {
           configFileContents = unCommentLinesStartingWith(string: Constants.Strings.sshProxyCommand, inContent: configFileContents)
         } else {
-          configFileContents = commentLinesStartingWith(string: Constants.Strings.sshProxyCommand, inContent: configFileContents)
+          configFileContents = unCommentLinesStartingWith(string: Constants.Strings.sshProxyCommand, inContent: configFileContents)
         }
         try configFileContents.write(toFile:configFile, atomically: true, encoding: String.Encoding.utf8)
       } catch {
@@ -109,20 +109,20 @@ class Reith {
       ? Constants.Strings.bbcOnNetwork
       : Constants.Strings.bbcOffNetwork
     
-    _ = Utils.runCommand(
-      command:Constants.Config.networkSetupLocation,
+    _ = try! Utils.runCommand(
+      command:Constants.NetworkSetup.binaryLocation,
       args:[
-        Constants.Strings.switchNetworkLocationFlag,
+        Constants.NetworkSetup.switchNetworkLocationFlag,
         onOrOff
     ])
   }
-
+  
   func configureShells(enabled: Bool) {
     for pid in Reith.getConfiguredShellPids() {
       kill(pid, enabled ? SIGUSR1 : SIGUSR2)
     }
   }
-
+  
   private static func getConfiguredShellPids() -> [pid_t] {
     let fileManager = FileManager.default
     if let url = URL(string: "\(fileManager.homeDirectoryForCurrentUser)\(Constants.Config.reithdDirName)/") {

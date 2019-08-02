@@ -9,7 +9,7 @@ func startDaemon() {
     try initDynamicStoreMonitoringRunLoop(callback: onDnsChange, keys: [dnsKey], patterns: nil)
     print("Reithd starting...")
     CFRunLoopRun()
-  } catch let InitError.withMessage(message) {
+  } catch let ReithdError.withMessage(message) {
     print(message)
     exit(1)
   } catch {
@@ -37,16 +37,16 @@ func onDnsChange(store: SCDynamicStore, changed _: CFArray, info _: UnsafeMutabl
 
 func initDynamicStoreMonitoringRunLoop(callback: @escaping SCDynamicStoreCallBack, keys: [CFString]? = nil, patterns: [CFString]? = nil) throws {
   guard let store = SCDynamicStoreCreate(kCFAllocatorDefault, "reithd" as CFString, callback, nil) else {
-    throw InitError.withMessage("Could not create dynamic store")
+    throw ReithdError.withMessage("Could not create dynamic store")
   }
-
+  
   guard let loop = SCDynamicStoreCreateRunLoopSource(kCFAllocatorDefault, store, 0) else {
-    throw InitError.withMessage("Could not create dynamic store runloop source")
+    throw ReithdError.withMessage("Could not create dynamic store runloop source")
   }
-
+  
   CFRunLoopAddSource(CFRunLoopGetCurrent(), loop, CFRunLoopMode.defaultMode)
-
+  
   if !SCDynamicStoreSetNotificationKeys(store, keys as CFArray?, patterns as CFArray?) {
-    throw InitError.withMessage("Failed to set notification keys")
+    throw ReithdError.withMessage("Failed to set notification keys")
   }
 }

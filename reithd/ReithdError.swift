@@ -1,5 +1,5 @@
 import Foundation
 
-enum InitError: Error {
+enum ReithdError: Error {
   case withMessage(String)
 }
