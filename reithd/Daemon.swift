@@ -8,7 +8,8 @@ var reithConfigurers: [ReithConfigurer] =
 [
   SshConfigurer(),
   NetworkLocationConfigurer(),
-  ShellConfigurer()
+  ShellConfigurer(),
+  SpotifyConfigurer()
 ]
 
 func startDaemon() {

@@ -23,6 +23,12 @@ struct Constants {
     static let reithDnsDomainNameKey = "DomainName"
   }
   
+  struct Spotify {
+    static let prefsPath = "Library/Application Support/Spotify/prefs"
+    static let proxyAddressKey = "network.proxy.addr"
+    static let proxyModeKey = "network.proxy.mode"
+  }
+  
   struct NetworkSetup {
     static let binaryLocation = "/usr/sbin/networksetup"
     static let switchNetworkLocationFlag = "-switchtolocation"
