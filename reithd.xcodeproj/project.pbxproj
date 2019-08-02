@@ -10,9 +10,17 @@
 		8D43D99222F35E0500484863 /* InitShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7391422F35BBE00994A31 /* InitShell.swift */; };
 		8D43D99422F3832000484863 /* SshConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D99322F3832000484863 /* SshConfig.swift */; };
 		8D43D99522F384C400484863 /* SshConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D99322F3832000484863 /* SshConfig.swift */; };
+		8D43D99822F43DF500484863 /* ReithConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D99722F43DF500484863 /* ReithConfigurer.swift */; };
+		8D43D99B22F43ECD00484863 /* SshConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D99A22F43ECD00484863 /* SshConfigurer.swift */; };
+		8D43D99D22F43FC700484863 /* NetworkLocationConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D99C22F43FC700484863 /* NetworkLocationConfigurer.swift */; };
+		8D43D99F22F4402B00484863 /* ShellConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D99E22F4402B00484863 /* ShellConfigurer.swift */; };
+		8D43D9A022F4486200484863 /* SshConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D99A22F43ECD00484863 /* SshConfigurer.swift */; };
+		8D43D9A122F4486200484863 /* NetworkLocationConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D99C22F43FC700484863 /* NetworkLocationConfigurer.swift */; };
+		8D43D9A222F4486200484863 /* ShellConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D99E22F4402B00484863 /* ShellConfigurer.swift */; };
+		8D43D9A322F4487800484863 /* ReithConfigurer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D99722F43DF500484863 /* ReithConfigurer.swift */; };
 		8DB738AE22ECE9E400994A31 /* ReithTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738AD22ECE9E400994A31 /* ReithTest.swift */; };
-		8DB738CB22ECEFED00994A31 /* Reith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C522ECEFED00994A31 /* Reith.swift */; };
-		8DB738CC22ECEFED00994A31 /* Reith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C522ECEFED00994A31 /* Reith.swift */; };
+		8DB738CB22ECEFED00994A31 /* ReithStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C522ECEFED00994A31 /* ReithStatus.swift */; };
+		8DB738CC22ECEFED00994A31 /* ReithStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C522ECEFED00994A31 /* ReithStatus.swift */; };
 		8DB738CD22ECEFED00994A31 /* ReithdError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C622ECEFED00994A31 /* ReithdError.swift */; };
 		8DB738CE22ECEFED00994A31 /* ReithdError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C622ECEFED00994A31 /* ReithdError.swift */; };
 		8DB738CF22ECEFED00994A31 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB738C722ECEFED00994A31 /* Store.swift */; };
@@ -43,10 +51,14 @@
 /* Begin PBXFileReference section */
 		8D43D99322F3832000484863 /* SshConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SshConfig.swift; path = reithd/SshConfig.swift; sourceTree = SOURCE_ROOT; };
 		8D43D99622F3993100484863 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8D43D99722F43DF500484863 /* ReithConfigurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReithConfigurer.swift; sourceTree = SOURCE_ROOT; };
+		8D43D99A22F43ECD00484863 /* SshConfigurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SshConfigurer.swift; sourceTree = "<group>"; };
+		8D43D99C22F43FC700484863 /* NetworkLocationConfigurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLocationConfigurer.swift; sourceTree = "<group>"; };
+		8D43D99E22F4402B00484863 /* ShellConfigurer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellConfigurer.swift; sourceTree = "<group>"; };
 		8DB738A322ECE92300994A31 /* reiithdtests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reiithdtests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DB738AD22ECE9E400994A31 /* ReithTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReithTest.swift; sourceTree = "<group>"; };
 		8DB738B322ECEA8B00994A31 /* reithd */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = reithd; sourceTree = BUILT_PRODUCTS_DIR; };
-		8DB738C522ECEFED00994A31 /* Reith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reith.swift; path = reithd/Reith.swift; sourceTree = SOURCE_ROOT; };
+		8DB738C522ECEFED00994A31 /* ReithStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReithStatus.swift; path = reithd/ReithStatus.swift; sourceTree = SOURCE_ROOT; };
 		8DB738C622ECEFED00994A31 /* ReithdError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReithdError.swift; path = reithd/ReithdError.swift; sourceTree = SOURCE_ROOT; };
 		8DB738C722ECEFED00994A31 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Store.swift; path = reithd/Store.swift; sourceTree = SOURCE_ROOT; };
 		8DB738C822ECEFED00994A31 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = reithd/Constants.swift; sourceTree = SOURCE_ROOT; };
@@ -74,6 +86,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D43D99922F43E5B00484863 /* Configurers */ = {
+			isa = PBXGroup;
+			children = (
+				8D43D99A22F43ECD00484863 /* SshConfigurer.swift */,
+				8D43D99C22F43FC700484863 /* NetworkLocationConfigurer.swift */,
+				8D43D99E22F4402B00484863 /* ShellConfigurer.swift */,
+			);
+			path = Configurers;
+			sourceTree = "<group>";
+		};
 		8DB7388222ECDE7100994A31 = {
 			isa = PBXGroup;
 			children = (
@@ -96,15 +118,17 @@
 		8DB738B422ECEA8B00994A31 /* reithd */ = {
 			isa = PBXGroup;
 			children = (
+				8D43D99922F43E5B00484863 /* Configurers */,
 				8DB738C822ECEFED00994A31 /* Constants.swift */,
 				8DB738C622ECEFED00994A31 /* ReithdError.swift */,
 				8DB738CA22ECEFED00994A31 /* main.swift */,
-				8DB738C522ECEFED00994A31 /* Reith.swift */,
+				8DB738C522ECEFED00994A31 /* ReithStatus.swift */,
 				8DB738C722ECEFED00994A31 /* Store.swift */,
 				8DB738DA22EDA1A600994A31 /* Daemon.swift */,
 				8DB738DF22F3394D00994A31 /* Utils.swift */,
 				8DB7391422F35BBE00994A31 /* InitShell.swift */,
 				8D43D99322F3832000484863 /* SshConfig.swift */,
+				8D43D99722F43DF500484863 /* ReithConfigurer.swift */,
 			);
 			name = reithd;
 			path = reithd/reithd;
@@ -210,15 +234,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D43D99D22F43FC700484863 /* NetworkLocationConfigurer.swift in Sources */,
 				8DB738D122ECEFED00994A31 /* Constants.swift in Sources */,
 				8DB7391522F35BBE00994A31 /* InitShell.swift in Sources */,
 				8D43D99422F3832000484863 /* SshConfig.swift in Sources */,
 				8DB738DB22EDA1A600994A31 /* Daemon.swift in Sources */,
 				8DB738D522ECEFED00994A31 /* main.swift in Sources */,
+				8D43D99822F43DF500484863 /* ReithConfigurer.swift in Sources */,
 				8DB738CD22ECEFED00994A31 /* ReithdError.swift in Sources */,
-				8DB738CB22ECEFED00994A31 /* Reith.swift in Sources */,
+				8DB738CB22ECEFED00994A31 /* ReithStatus.swift in Sources */,
+				8D43D99B22F43ECD00484863 /* SshConfigurer.swift in Sources */,
 				8DB738AE22ECE9E400994A31 /* ReithTest.swift in Sources */,
 				8DB738CF22ECEFED00994A31 /* Store.swift in Sources */,
+				8D43D99F22F4402B00484863 /* ShellConfigurer.swift in Sources */,
 				8DB738E022F3394D00994A31 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +255,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D43D9A322F4487800484863 /* ReithConfigurer.swift in Sources */,
+				8D43D9A022F4486200484863 /* SshConfigurer.swift in Sources */,
+				8D43D9A122F4486200484863 /* NetworkLocationConfigurer.swift in Sources */,
+				8D43D9A222F4486200484863 /* ShellConfigurer.swift in Sources */,
 				8D43D99522F384C400484863 /* SshConfig.swift in Sources */,
 				8D43D99222F35E0500484863 /* InitShell.swift in Sources */,
 				8DB738D022ECEFED00994A31 /* Store.swift in Sources */,
@@ -234,7 +266,7 @@
 				8DB738CE22ECEFED00994A31 /* ReithdError.swift in Sources */,
 				8DB738E122F3394D00994A31 /* Utils.swift in Sources */,
 				8DB738D622ECEFED00994A31 /* main.swift in Sources */,
-				8DB738CC22ECEFED00994A31 /* Reith.swift in Sources */,
+				8DB738CC22ECEFED00994A31 /* ReithStatus.swift in Sources */,
 				8DB738D222ECEFED00994A31 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

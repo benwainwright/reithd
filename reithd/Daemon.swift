@@ -4,6 +4,13 @@ import Foundation
 import SystemConfiguration
 import Logging
 
+var reithConfigurers: [ReithConfigurer] =
+[
+  SshConfigurer(),
+  NetworkLocationConfigurer(),
+  ShellConfigurer()
+]
+
 func startDaemon() {
   do {
     let dnsKey = SCDynamicStoreKeyCreateNetworkGlobalEntity(kCFAllocatorDefault, kSCDynamicStoreDomainState, kSCEntNetDNS)
@@ -21,19 +28,11 @@ func startDaemon() {
 
 func onDnsChange(store: SCDynamicStore, changed _: CFArray, info _: UnsafeMutableRawPointer?) {
   os_log("Reithd triggered", log: OSLog.default, type: .debug)
-  let reith = Reith(store: store)
-  if reith.isConnected() {
-    if !reith.isConfigured() {
-      reith.configureNetworkLocation(enabled: true)
-    }
-    reith.configureShells(enabled: true)
-    reith.configureSshConfig(enabled: true)
-  } else {
-    if reith.isConfigured() {
-      reith.configureNetworkLocation(enabled: false)
-    }
-    reith.configureShells(enabled: false)
-    reith.configureSshConfig(enabled: false)
+  let reithStatus = ReithStatus(store: store)
+  
+  for var configurer in reithConfigurers {
+    configurer.reithStatus = reithStatus
+    configurer.configureForReith()
   }
 }
 
