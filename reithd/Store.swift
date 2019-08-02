@@ -23,7 +23,7 @@ class Store {
       return nil
     }
     
-    os_log("Value that was returned as a dictionary, getting value for key %@", log: OSLog.default, type: .debug, dictKey)
+    os_log("Value that was returned was a dictionary, getting value for key %@", log: OSLog.default, type: .debug, dictKey)
     return dict[dictKey] as? V
   }
 }
