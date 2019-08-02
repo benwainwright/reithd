@@ -121,7 +121,7 @@ class Reith {
         if(enabled) {
           configFileContents = unCommentLinesStartingWith(string: Constants.Strings.sshProxyCommand, inContent: configFileContents)
         } else {
-          configFileContents = CommentLinesStartingWith(string: Constants.Strings.sshProxyCommand, inContent: configFileContents)
+          configFileContents = commentLinesStartingWith(string: Constants.Strings.sshProxyCommand, inContent: configFileContents)
         }
         os_log("Writing %@ back to disk", log: OSLog.default, type: .debug, configFile)
         try configFileContents.write(toFile:configFile, atomically: true, encoding: String.Encoding.utf8)
