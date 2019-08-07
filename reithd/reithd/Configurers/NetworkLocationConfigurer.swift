@@ -45,9 +45,10 @@ class NetworkLocationConfigurer: ReithConfigurer {
         guard let returnVal = String(data: data, encoding: .utf8) else {
             throw ReithdError.withMessage("Failed to initialise string")
         }
+        task.waitUntilExit()
 
-        os_log("Command return code was %@", log: OSLog.default, type: .debug, returnVal)
-        os_log("Command output was %@", log: OSLog.default, type: .debug, task.terminationStatus)
+        os_log("Command return code was %d", log: OSLog.default, type: .debug, task.terminationStatus)
+        os_log("Command output was '%@'", log: OSLog.default, type: .debug, returnVal)
 
         return returnVal
     }
