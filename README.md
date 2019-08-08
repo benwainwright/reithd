@@ -28,14 +28,13 @@ All shells that are configured to use reithd will automatically have their envir
 ```bash
 eval "$(reithd shell)"
 ```
+#### How this works
+
+This will inject a script into your shell startup which creates and removes pid files in `~/.reithd` when shell process starts up and shuts down respectively. When a change is detected, `reithd` will check this folder, collect the pid numbers and send `SIGUSR1` or `SIGUSR2` signals to each configured shell proccess. The injected shell startup script configures your shell to respond to these signals by either removing or adding proxy variables.
 
 ### Spotify
 
 If you have Spotify installed, your preferences will be automatically edited to include the Reith proxy address. You'll still need to restart Spotify though (I'm considering adding an automatic restart)
-
-#### How this works
-
-This will inject a script into your shell startup which creates and removes pid files in `~/.reithd` when shell process starts up and shuts down respectively. When a change is detected, `reithd` will check this folder, collect the pid numbers and send `SIGUSR1` or `SIGUSR2` signals to each configured shell proccess. The injected shell startup script configures your shell to respond to these signals by either removing or adding proxy variables.
 
 ### SSH
 
