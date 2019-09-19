@@ -26,6 +26,8 @@ struct Constants {
         static let prefsPath = "Library/Application Support/Spotify/prefs"
         static let proxyAddressKey = "network.proxy.addr"
         static let proxyModeKey = "network.proxy.mode"
+        static let spotifyBundleIdentifier = "com.spotify.client"
+        static let spotifyAppName = "Spotify"
     }
 
     struct NetworkSetup {

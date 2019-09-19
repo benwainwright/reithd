@@ -1,5 +1,6 @@
 import Foundation
 import Logging
+import AppKit
 
 class SpotifyConfigurer: ReithConfigurer {
     public override func configureForReith() {
@@ -20,6 +21,19 @@ class SpotifyConfigurer: ReithConfigurer {
         }
         return newLines.joined(separator: "\n")
     }
+  
+    private func rebootSpotify() {
+        let workspace = NSWorkspace.shared
+        let apps = workspace.runningApplications
+        for app in apps {
+            if let identifier = app.bundleIdentifier {
+                if identifier == Constants.Spotify.spotifyBundleIdentifier {
+                    app.terminate()
+                    workspace.launchApplication(Constants.Spotify.spotifyAppName)
+                }
+            }
+        }
+    }
 
     private func doConfigure(enabled: Bool) {
         os_log("Configuring Spotify config", log: OSLog.default, type: .debug)
@@ -36,6 +50,7 @@ class SpotifyConfigurer: ReithConfigurer {
             } catch {
                 os_log("Access to %@ failed", log: OSLog.default, type: .error, spotifyConfigFile)
             }
+            rebootSpotify()
         }
     }
 }
