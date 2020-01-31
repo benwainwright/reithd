@@ -2,9 +2,9 @@ import Foundation
 
 struct Constants {
     struct Config {
-        static let reithHttpUrl = "www-cache.reith.bbc.co.uk"
+        static let reithHttpUrl = "https://www-cache.reith.bbc.co.uk"
         static let reithHttpPort = 80
-        static let reithFtpUrl = "ftp-gw.reith.bbc.co.uk:21"
+        static let reithFtpUrl = "ftp://ftp-gw.reith.bbc.co.uk:21"
         static let reithDnsDomainName = "national.core.bbc.co.uk"
         static let reithSocksUrl = "socks-gw.reith.bbc.co.uk:1080"
         static let reithdDirName = ".reithd"

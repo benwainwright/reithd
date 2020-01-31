@@ -90,12 +90,33 @@ class ShellConfigurer: ReithConfigurer {
     reithd-configure-reith() {
         reithd-set-shell-config
         reithd-configure-git-for-reith
+        export REITH_CONNECTED=true
     }
 
     reithd-unconfigure-reith() {
         reithd-clear-shell-config
         reithd-configure-git-for-no-reith
+        if [ ! -z "$REITH_CONNECTED" ]; then
+            unset REITH_CONNECTED
+        fi
     }
+    
+    reithd-is-connected-to-reith() {
+        local commands output
+
+        commands=$'open\nget State:/Network/Global/DNS\\nd.show'
+        output=$(echo "$commands" | scutil)
+        if [[ "$output" != *"national.core.bbc.co.uk"* ]]; then
+            return 1
+        fi
+        return 0
+    }
+    
+    if reithd-is-connected-to-reith; then
+        reithd-configure-reith
+    else
+        reithd-unconfigure-reith
+    fi
 
     if [ ! -d "$HOME/.reithd" ]; then
       mkdir "$HOME/.reithd"
