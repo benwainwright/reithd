@@ -1,4 +1,4 @@
-.PHONY: build
+.PHONY: build release
 SRC_FILES=$(find . -name "*.swift")
 
 .build/debug/reithd: ${SRC_FILES}
@@ -11,7 +11,7 @@ SRC_FILES=$(find . -name "*.swift")
 
 build: .build/debug/reithd
 
-github-release: .build/release/reithd
+release: .build/release/reithd
 	./scripts/release.sh ${RELEASE_VERSION} .build/release/reithd
 
 
