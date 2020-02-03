@@ -49,8 +49,8 @@ class ShellConfigurer: ReithConfigurer {
       export FTP_PROXY="$ftp_proxy"
       export ALL_PROXY="$http_proxy"
       export NO_PROXY="localhost,127.0.0.1"
-      export npm_config_proxy="http://$HTTP_PROXY"
-      export npm_config_https_proxy="http://$HTTPS_PROXY"
+      export npm_config_proxy="$HTTP_PROXY"
+      export npm_config_https_proxy="$HTTPS_PROXY"
     }
 
     reithd-clear-shell-config() {
