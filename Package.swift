@@ -4,24 +4,34 @@
 import PackageDescription
 
 let package = Package(
-    name: "reithd",
-    platforms: [
-      .macOS(.v10_12),
-    ],
-    products: [
-      .executable(
-        name: "reithd",
-        targets: ["reithd"]
+  name: "reithd",
+  platforms: [
+    .macOS(.v10_12),
+  ],
+  products: [
+    .executable(
+      name: "reithd",
+      targets: ["reithd"]
+    )
+  ],
+  dependencies: [
+    .package(
+      url: "https://github.com/kylef/Commander.git",
+      from: "0.9.1"
       )
-    ],
-    targets: [
-        .target(
-            name: "reithd",
-            dependencies: []
-        ),
-        .testTarget(
-            name: "reithdTests",
-            dependencies: ["reithd"]
-        ),
-    ]
+  ],
+  targets: [
+    .target(
+      name: "reithd",
+      dependencies: ["ReithDCore", "Commander"]
+      ),
+    .target(
+      name: "ReithDCore",
+      dependencies: []
+      ),
+    .testTarget(
+      name: "reithdTests",
+      dependencies: ["ReithDCore"]
+      ),
+  ]
 )

@@ -1,7 +1,7 @@
 import Foundation
 import Logging
 
-class ShellConfigurer: ReithConfigurer {
+public class ShellConfigurer: ReithConfigurer {
     public override func configureForReith() {
         doConfigure(enabled: reithStatus.isConnected())
     }

@@ -1,7 +1,7 @@
 import Foundation
 import Logging
 
-class Utils {
+public class Utils {
 
     static func parseCommandLine(args: [String]) -> (positional: [String], named: [String: String]) {
         var named = [String: String]()

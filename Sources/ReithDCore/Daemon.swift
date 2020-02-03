@@ -12,7 +12,7 @@ var reithConfigurers: [ReithConfigurer] =
         SpotifyConfigurer(),
     ]
 
-func startDaemon() {
+public func startDaemon() {
     do {
         let dnsKey = SCDynamicStoreKeyCreateNetworkGlobalEntity(kCFAllocatorDefault, kSCDynamicStoreDomainState, kSCEntNetDNS)
         try initDynamicStoreMonitoringRunLoop(callback: onDnsChange, keys: [dnsKey], patterns: nil)

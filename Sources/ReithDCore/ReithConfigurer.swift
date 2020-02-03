@@ -1,6 +1,6 @@
 import Foundation
 
-class ReithConfigurer {
+public class ReithConfigurer {
     var _reithStatus: ReithStatus?
     var reithStatus: ReithStatus {
         set {
