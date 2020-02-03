@@ -7,7 +7,7 @@ This project is a daemon for mac users that automatically reconfigures the user'
 Install via homebrew as follows
 
 ```
-brew tap benwainwright/tools
+brew tap benwainwright/tools https://github.com/benwainwright/reithd
 brew install reithd
 ```
 
