@@ -3,7 +3,6 @@ import Darwin
 import Foundation
 import SystemConfiguration
 
-
 let args = Utils.parseCommandLine(args: CommandLine.arguments)
 
 if args.positional.count < 2 {
