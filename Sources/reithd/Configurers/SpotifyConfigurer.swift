@@ -29,7 +29,16 @@ class SpotifyConfigurer: ReithConfigurer {
             if let identifier = app.bundleIdentifier {
                 if identifier == Constants.Spotify.spotifyBundleIdentifier {
                     app.terminate()
-                    workspace.launchApplication(Constants.Spotify.spotifyAppName)
+                    if !app.isActive {
+                      workspace.launchApplication(
+                        withBundleIdentifier: Constants.Spotify.spotifyBundleIdentifier,
+                        options: .withoutActivation,
+                        additionalEventParamDescriptor: nil,
+                        launchIdentifier: nil)
+                      
+                    } else {
+                      workspace.launchApplication(Constants.Spotify.spotifyAppName)
+                    }
                 }
             }
         }
@@ -44,9 +53,22 @@ class SpotifyConfigurer: ReithConfigurer {
         if fileManager.fileExists(atPath: spotifyConfigFile) {
             do {
                 var configFileContents = try String(contentsOfFile: spotifyConfigFile)
-                configFileContents = changeValueInConfigFile(key: Constants.Spotify.proxyModeKey, value: enabled ? "4" : "1", inContent: configFileContents)
-                configFileContents = changeValueInConfigFile(key: Constants.Spotify.proxyAddressKey, value: enabled ? "\"\(Constants.Config.reithSocksUrl)@socks5\"" : "\"\"", inContent: configFileContents)
-                try configFileContents.write(toFile: spotifyConfigFile, atomically: true, encoding: String.Encoding.utf8)
+              
+                configFileContents = changeValueInConfigFile(
+                  key: Constants.Spotify.proxyModeKey,
+                  value: enabled ? "4" : "1",
+                  inContent: configFileContents)
+              
+                configFileContents = changeValueInConfigFile(
+                  key: Constants.Spotify.proxyAddressKey,
+                  value: enabled ? "\"\(Constants.Config.reithSocksUrl)@socks5\"" : "\"\"",
+                  inContent: configFileContents)
+              
+                try configFileContents.write(
+                  toFile: spotifyConfigFile,
+                  atomically: true,
+                  encoding: String.Encoding.utf8
+                )
             } catch {
                 os_log("Access to %@ failed", log: OSLog.default, type: .error, spotifyConfigFile)
             }

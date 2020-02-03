@@ -2,6 +2,25 @@ import Foundation
 import Logging
 
 class Utils {
+
+    static func parseCommandLine(args: [String]) -> (positional: [String], named: [String: String]) {
+        var named = [String: String]()
+        var positional = [String]()
+        var i = 0
+        while i < args.count {
+            if args[i].hasPrefix("--"), i < args.count - 1 {
+                let nameIndex = args[i].index(args[i].startIndex, offsetBy: 2)
+                let name = String(args[i][nameIndex...])
+                named[name] = args[i + 1]
+                i += 1
+            } else {
+                positional.append(args[i])
+            }
+            i += 1
+        }
+        return (positional: positional, named: named)
+    }
+
     static func runCommand(command: String, args: [String]) throws -> String {
         os_log("Running command %@ %@", log: OSLog.default, type: .debug, command, args.joined(separator: " "))
 
