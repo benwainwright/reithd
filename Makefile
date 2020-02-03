@@ -12,6 +12,6 @@ SRC_FILES=$(find . -name "*.swift")
 build: .build/debug/reithd
 
 release: .build/release/reithd
-	./scripts/release.sh ${RELEASE_VERSION} .build/release/reithd
+	./scripts/release.sh .build/release/reithd
 
 
