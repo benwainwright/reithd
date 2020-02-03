@@ -6,7 +6,7 @@ let app = Group {
     startDaemon()
   }
 
-  $0.command("initShell") {
+  $0.command("shell") {
     print(ShellConfigurer.shellScript)
   }
 }
