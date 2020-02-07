@@ -12,26 +12,26 @@ let package = Package(
     .executable(
       name: "reithd",
       targets: ["reithd"]
-    )
+    ),
   ],
   dependencies: [
     .package(
-      url: "https://github.com/kylef/Commander.git",
-      from: "0.9.1"
-      )
+      url: "https://github.com/nicklockwood/SwiftFormat",
+      from: "0.44.2"
+    ),
   ],
   targets: [
     .target(
       name: "reithd",
       dependencies: ["ReithDCore", "Commander"]
-      ),
+    ),
     .target(
       name: "ReithDCore",
       dependencies: []
-      ),
+    ),
     .testTarget(
-      name: "reithdTests",
+      name: "ReithDCoreTests",
       dependencies: ["ReithDCore"]
-      ),
+    ),
   ]
 )

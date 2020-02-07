@@ -25,19 +25,18 @@ public final class CommandLineTool {
   private let arguments: (positional: [String], named: [String: String])
 
   public init(arguments: [String] = CommandLine.arguments) {
-    self.arguments = parseCommandLine(args: arguments);
+    self.arguments = parseCommandLine(args: arguments)
   }
 
   public func run() throws {
-
-    if self.arguments.positional.count < 2 {
+    if arguments.positional.count < 2 {
       print("Error: invalid usage")
       exit(1)
     }
 
-    if self.arguments.positional[1] == Constants.Commands.initShell {
+    if arguments.positional[1] == Constants.Commands.initShell {
       print(ShellConfigurer.shellScript)
-    } else if self.arguments.positional[1] == Constants.Commands.startCommand {
+    } else if arguments.positional[1] == Constants.Commands.startCommand {
       startDaemon()
     }
   }

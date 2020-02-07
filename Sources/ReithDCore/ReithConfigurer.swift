@@ -1,18 +1,18 @@
 import Foundation
 
 public class ReithConfigurer {
-    var _reithStatus: ReithStatus?
-    var reithStatus: ReithStatus {
-        set {
-            _reithStatus = newValue
-        }
-
-        get {
-            return _reithStatus!
-        }
+  var _reithStatus: ReithStatus?
+  var reithStatus: ReithStatus {
+    set {
+      _reithStatus = newValue
     }
 
-    public func configureForReith() {
-        fatalError("Method must be overriden by inheriting classes")
+    get {
+      _reithStatus!
     }
+  }
+
+  public func configureForReith() {
+    fatalError("Method must be overriden by inheriting classes")
+  }
 }
